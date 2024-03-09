@@ -1,0 +1,30 @@
+{
+  "Vue": {
+    "prefix": "vuet",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import {} from '$1'",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {}",
+      "",
+      "const props = defineProps<${TM_FILENAME_BASE}Props>()",
+      "",
+      "const emit = defineEmits<{",
+      "  change: []",
+      "}>()",
+      "</script>",
+      "",
+      "<template>",
+      "  <div :class=\"\\$style.root\"></div>",
+      "</template>",
+      "",
+      "<style lang=\"scss\" module>",
+      ".root {",
+      "  ",
+      "}",
+      "</style>",
+      ""
+    ],
+    "description": "Insert snippets template into Vue file"
+  }
+}

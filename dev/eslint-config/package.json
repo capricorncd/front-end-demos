@@ -1,0 +1,36 @@
+{
+  "name": "@fed-dev/eslint-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "prettier": "prettier --write .",
+    "stylelint": "stylelint \"**/*.{vue,scss,css}\" \"!**/dist/**\" --fix",
+    "format": "npm run lint && npm run stylelint",
+    "test": "vitest"
+  },
+  "keywords": [
+    "dev/eslint-config",
+    "front-end"
+  ],
+  "files": [],
+  "workspaces": [],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs}": "eslint --fix",
+    "*.{css,scss}": "prettier --write"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT"
+}

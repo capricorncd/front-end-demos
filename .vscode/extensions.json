@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "rebornix.project-snippets",
+    "streetsidesoftware.code-spell-checker",
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+  ]
+}

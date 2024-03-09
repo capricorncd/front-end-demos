@@ -1,0 +1,33 @@
+{
+  "name": "front-end-demos",
+  "version": "1.0.0",
+  "description": "Some web front-end demos, whose submodules are prefixed by their omitted fed-*.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prepare": "husky",
+    "lint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "prettier": "prettier --write .",
+    "stylelint": "stylelint \"**/*.{vue,scss,css}\" \"!**/dist/**\" --fix",
+    "format": "npm run lint && npm run stylelint",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "files": [],
+  "workspaces": [
+    "./css/*",
+    "./dev/*",
+    "./js/*",
+    "./libs/*",
+    "./nodejs/*",
+    "./react/*",
+    "./vue/*"
+  ],
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "inquirer": "^9.2.15"
+  },
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT"
+}

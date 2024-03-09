@@ -1,0 +1,6 @@
+#!/bin/sh
+# Give pre-commit execution permissions
+# chmod +x .husky/pre-commit
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
