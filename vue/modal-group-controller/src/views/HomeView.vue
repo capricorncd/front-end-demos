@@ -6,7 +6,9 @@ const { component: ModalGroup, open } = useHome()
 
 <template>
   <main>
-    <h1>This is an <i><b>useActionController</b></i> page</h1>
+    <h1>
+      This is an <i><b>useActionController</b></i> page
+    </h1>
     <button @click="open('TestA')">Show Modal TestA</button>
     <ModalGroup />
   </main>

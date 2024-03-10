@@ -20,18 +20,6 @@ export function useSchedulerController<N extends string | number | symbol>() {
   let _beforeEachHandler: SchedulerHandler | null = null
   let _afterEachHandler: SchedulerHandler | null = null
 
-  /**
-   * Execute scheduler handler named `name`
-   *
-   * @param name scheduler name
-   * @param args some arg
-   */
-  const _execute = (name: N, ...args: any[]) => {
-    _beforeEachHandler?.(...args)
-    _schedulers[name](...args)
-    _afterEachHandler?.(...args)
-  }
-
   return {
     /**
      * Add a scheduler handler named `name`
@@ -74,12 +62,14 @@ export function useSchedulerController<N extends string | number | symbol>() {
      * @param args
      */
     execute(name: N, ...args: any[]) {
-      _execute(name, ...args)
+      _beforeEachHandler?.(...args)
+      _schedulers[name](...args)
+      _afterEachHandler?.(...args)
     },
     /**
      * Will be executed when `scheduler.end()`
      *
-     * @param endHandler scheduler.end()
+     * @param endHandler
      * @returns UseSchedulerController
      */
     onEnd(endHandler: SchedulerHandler) {
