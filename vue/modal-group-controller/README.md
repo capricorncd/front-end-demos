@@ -1,6 +1,8 @@
-# modal-group
+# modal-group-controller
 
-This template should help get you started developing with Vue 3 in Vite.
+playground url: https://capricorncd.github.io/demos/vue/modal-group-controller
+
+> This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
