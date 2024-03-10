@@ -4,74 +4,102 @@
  * Date: 2024/03/10 16:08:20 (GMT+0900)
  */
 /**
- * Scheduler Handler
+ * @type Scheduler Handler
  */
 export type SchedulerHandler = (...args: any[]) => void | Promise<void>
 
-export interface Scheduler<N> {
-  name: N
-  handler: SchedulerHandler
-}
-
+/**
+ * Scheduler Controller
+ *
+ * @returns UseSchedulerController
+ */
 export function useSchedulerController<N extends string | number | symbol>() {
-  const _schedulerList: Scheduler<N>[] = []
+  const _schedulers: Record<N, SchedulerHandler> = {} as Record<N, SchedulerHandler>
 
-  let _stopHandler: SchedulerHandler | null = null
+  let _endHandler: SchedulerHandler | null = null
   let _beforeEachHandler: SchedulerHandler | null = null
   let _afterEachHandler: SchedulerHandler | null = null
 
-  let _index = 0
-
-  const _next = (name: N | null, ...args: any[]) => {
+  /**
+   * Execute scheduler handler named `name`
+   *
+   * @param name scheduler name
+   * @param args some arg
+   */
+  const _execute = (name: N, ...args: any[]) => {
     _beforeEachHandler?.(...args)
-    if (name) {
-      const index = _schedulerList.findIndex((item) => item.name === name)
-      if (index !== -1) _index = index
-    }
-    const scheduler = _schedulerList[_index]
-    if (!scheduler) throw new Error(`${String(name)} scheduler does not exist`)
-    scheduler.handler(...args)
+    _schedulers[name](...args)
     _afterEachHandler?.(...args)
-    _index++
   }
 
   return {
+    /**
+     * Add a scheduler handler named `name`
+     *
+     * @param name scheduler name
+     * @param handler SchedulerHandler
+     * @returns UseSchedulerController
+     */
     add(name: N, handler: SchedulerHandler) {
-      _schedulerList.push({
-        name,
-        handler
-      })
+      if (_schedulers[name]) {
+        throw new Error(`A ${String(name)} named scheduler handler already exists.`)
+      }
+      _schedulers[name] = handler
       return this
     },
-    onStop(stopHandler: SchedulerHandler) {
-      _stopHandler = stopHandler
-      return this
-    },
+    /**
+     * Execute before executing `scheduler.execute()` and `scheduler.end()`
+     *
+     * @param beforeEachHandler
+     * @returns UseSchedulerController
+     */
     beforeEach(beforeEachHandler: SchedulerHandler) {
       _beforeEachHandler = beforeEachHandler
       return this
     },
+    /**
+     * Execute after executing `scheduler.execute()` and `scheduler.end()`
+     *
+     * @param afterEachHandler
+     * @returns UseSchedulerController
+     */
     afterEach(afterEachHandler: SchedulerHandler) {
       _afterEachHandler = afterEachHandler
       return this
     },
-    next(name: N | null, ...args: any[]) {
-      _next(name, ...args)
+    /**
+     * Execute scheduler handler named `name`
+     *
+     * @param name scheduler name
+     * @param args
+     */
+    execute(name: N, ...args: any[]) {
+      _execute(name, ...args)
     },
-    start(...args: any[]) {
-      _index = 0
-      _next(null, ...args)
+    /**
+     * Will be executed when `scheduler.end()`
+     *
+     * @param endHandler scheduler.end()
+     * @returns UseSchedulerController
+     */
+    onEnd(endHandler: SchedulerHandler) {
+      _endHandler = endHandler
+      return this
     },
-    stop(...args: any[]) {
-      _index = 0
+    /**
+     * End scheduler to execute the end handler/listener. At the same time, if `beforeEachHandler` and `afterEachHandler` exist, they will also be executed.
+     *
+     * @param args
+     */
+    end(...args: any[]) {
       _beforeEachHandler?.(...args)
-      _stopHandler?.(...args)
+      _endHandler?.(...args)
       _afterEachHandler?.(...args)
     }
   }
 }
 
 /**
- * useSchedulerController's type
+ * @type useSchedulerController's type
  */
 export type UseSchedulerController = ReturnType<typeof useSchedulerController>

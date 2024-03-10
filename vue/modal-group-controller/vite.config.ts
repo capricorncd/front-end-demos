@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -11,10 +10,17 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': resolve('./src')
     }
   },
   server: {
     open: true,
+  },
+  build: {
+    outDir: resolve(`../../../capricorncd.github.io/demos/vue/modal-group-controller`)
   }
 })
+
+function resolve(_path: string) {
+  return fileURLToPath(new URL(_path, import.meta.url))
+}

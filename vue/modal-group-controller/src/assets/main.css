@@ -51,3 +51,7 @@ button:hover {
 button ~ button {
   margin-left: 0.5em;
 }
+
+b {
+  font-weight: bold;
+}
