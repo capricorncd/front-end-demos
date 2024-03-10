@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build --emptyOutDir",
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
@@ -57,5 +57,10 @@
   },
   "homepage": "https://github.com/capricorncd/front-end-demos#readme",
   "author": "Capricorncd<capricorncd@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "docInfo": {
+    "name": "vue/modal-group-controller",
+    "url": "https://capricorncd.github.io/demos/vue/modal-group-controller",
+    "description": ""
+  }
 }

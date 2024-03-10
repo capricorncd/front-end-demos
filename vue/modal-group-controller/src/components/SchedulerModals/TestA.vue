@@ -15,9 +15,9 @@ const props = defineProps<TestAProps>()
   <Modal title="Test Modal A" :class="$style.root" :model-value="props.visible">
     Some text for this modal. {{ msg }}
     <template #footer>
-      <button @click="scheduler.next('openTestB', 'Show B')">Show B</button>
-      <button @click="scheduler.next('openTestD', 'Show D')">Show D</button>
-      <button @click="scheduler.stop()">Close</button>
+      <button @click="scheduler.execute('openTestB', 'Show B')">Show B</button>
+      <button @click="scheduler.execute('openTestD', 'Show D')">Show D</button>
+      <button @click="scheduler.end()">Close</button>
     </template>
   </Modal>
 </template>

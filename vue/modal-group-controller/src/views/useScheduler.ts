@@ -37,9 +37,7 @@ export function useScheduler() {
     })
 
   return {
-    start() {
-      return scheduler.start()
-    },
+    scheduler,
     get component() {
       return modalGroup.component
     }
