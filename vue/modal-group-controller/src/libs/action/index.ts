@@ -48,7 +48,7 @@ export function useActionController<N extends string>() {
     get component(): Component {
       return {
         render() {
-          return Object.keys(_modals).map((name) => _modals[name as N].component)
+          return Object.values<UseModalController>(_modals).map((modal) => modal.component)
         }
       }
     }

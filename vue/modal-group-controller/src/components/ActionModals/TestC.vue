@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Modal from './Modal.vue'
+import Modal from '../Modal.vue'
 
 interface TestBProps {
   visible?: boolean
@@ -18,12 +18,11 @@ const handleClick = (action: string, params: string) => {
 </script>
 
 <template>
-  <Modal title="Test Modal B" :class="$style.root" :model-value="visible">
+  <Modal title="Test Modal C" :class="$style.root" :model-value="visible">
     Some text for this modal. {{ msg }}
     <template #footer>
-      <button @click="handleClick('back', 'Show A')">Back</button>
-      <button @click="handleClick('show-c', 'Open TestC')">Open TestC</button>
-      <button @click="handleClick('close', 'Close B')">Close</button>
+      <button @click="handleClick('back', 'Show B')">Back</button>
+      <button @click="handleClick('close', 'Close C')">Close</button>
     </template>
   </Modal>
 </template>
@@ -32,7 +31,7 @@ const handleClick = (action: string, params: string) => {
 .root {
   width: 100%;
   padding: 2em;
-  background-color: rgb(208, 14, 133);
+  background-color: rgb(230, 88, 246);
   margin: 0.5em 0;
 }
 </style>

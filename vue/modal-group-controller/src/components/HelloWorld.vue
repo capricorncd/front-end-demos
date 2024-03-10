@@ -11,6 +11,9 @@ defineProps<{
       How to control the reality and scheduling of continuous Modal.
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      <a href="https://github.com/capricorncd/front-end-demos" target="_blank" rel="noopener"
+        >Github</a
+      >
     </h3>
   </div>
 </template>
