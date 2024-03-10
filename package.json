@@ -11,7 +11,8 @@
     "prettier": "prettier --write .",
     "stylelint": "stylelint \"**/*.{vue,scss,css}\" \"!**/dist/**\" --fix",
     "format": "npm run lint && npm run stylelint",
-    "test": "vitest"
+    "test": "vitest",
+    "ur": "node scripts/update-readme.mjs"
   },
   "keywords": [],
   "files": [],

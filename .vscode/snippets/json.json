@@ -41,6 +41,7 @@
         "  \"license\": \"MIT\",",
         "  \"docInfo\": {",
         "    \"name\": \"${TM_DIRECTORY/.+\\/(.+\\/.+)$/$1/i}\",",
+        "    \"source\": \"${TM_DIRECTORY/.+\\/(.+\\/.+)$/$1/i}\",",
         "    \"url\": \"https://capricorncd.github.io/demos/${TM_DIRECTORY/.+\\/(.+\\/.+)$/$1/i}\",",
         "    \"description\": \"\"",
         "  }",

@@ -60,6 +60,7 @@
   "license": "MIT",
   "docInfo": {
     "name": "vue/modal-group-controller",
+    "source": "vue/modal-group-controller",
     "url": "https://capricorncd.github.io/demos/vue/modal-group-controller",
     "description": ""
   }
