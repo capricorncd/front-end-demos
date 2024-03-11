@@ -49,7 +49,7 @@ function createDocInfoLines(arr) {
   return lines
 }
 
-function getDocInfoFromDir(rootDir, docInfoArr = []) {
+function getDocInfoFromDir(rootDir, docInfoArr = [], disableFilter = false) {
   let tempDir, stat
   fs.readdirSync(rootDir).forEach(dirname => {
     tempDir = path.join(rootDir, dirname)
@@ -62,11 +62,11 @@ function getDocInfoFromDir(rootDir, docInfoArr = []) {
         docInfoArr.push(getDocInfoFromPackageJson(pkgFilePath))
       } else {
         // 查找子目录
-        getDocInfoFromDir(tempDir, docInfoArr)
+        getDocInfoFromDir(tempDir, docInfoArr, true)
       }
     }
   })
-  return docInfoArr.filter(Boolean)
+  return disableFilter ? docInfoArr : docInfoArr.filter(Boolean)
 }
 
 const ROOT_DIR_PATH = resolve('../')
