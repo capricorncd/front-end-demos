@@ -38,7 +38,7 @@ export function useSchedulerController<N extends string | number | symbol>() {
     /**
      * Execute before executing `scheduler.execute()` and `scheduler.end()`
      *
-     * @param beforeEachHandler
+     * @param beforeEachHandler Handler executed when `execute()` or `end()` is before called
      * @returns UseSchedulerController
      */
     beforeEach(beforeEachHandler: SchedulerHandler) {
@@ -48,7 +48,7 @@ export function useSchedulerController<N extends string | number | symbol>() {
     /**
      * Execute after executing `scheduler.execute()` and `scheduler.end()`
      *
-     * @param afterEachHandler
+     * @param afterEachHandler Handler executed when `execute()` or `end()` is after called
      * @returns UseSchedulerController
      */
     afterEach(afterEachHandler: SchedulerHandler) {
@@ -59,7 +59,7 @@ export function useSchedulerController<N extends string | number | symbol>() {
      * Execute scheduler handler named `name`
      *
      * @param name scheduler name
-     * @param args
+     * @param args Some parameters passed to the handler
      */
     execute(name: N, ...args: any[]) {
       _beforeEachHandler?.(...args)
@@ -69,7 +69,7 @@ export function useSchedulerController<N extends string | number | symbol>() {
     /**
      * Will be executed when `scheduler.end()`
      *
-     * @param endHandler
+     * @param endHandler Handler executed when `end()` is called
      * @returns UseSchedulerController
      */
     onEnd(endHandler: SchedulerHandler) {
@@ -79,7 +79,7 @@ export function useSchedulerController<N extends string | number | symbol>() {
     /**
      * End scheduler to execute the end handler/listener. At the same time, if `beforeEachHandler` and `afterEachHandler` exist, they will also be executed.
      *
-     * @param args
+     * @param args Some parameters passed to the handler
      */
     end(...args: any[]) {
       _beforeEachHandler?.(...args)
