@@ -47,38 +47,3 @@ export function useModalController<T>(
  * useModalController's type
  */
 export type UseModalController = ReturnType<typeof useModalController>
-
-export function useModalGroup<N extends string | number | symbol>(
-  scheduler: UseSchedulerController
-) {
-  const _modals: Record<N, UseModalController> = {} as Record<N, UseModalController>
-
-  return {
-    add<P>(name: N, component: Component, props?: P) {
-      const modal = useModalController(component, scheduler, props)
-      _modals[name] = modal
-      return this
-    },
-    open(name: N) {
-      _modals[name].open()
-    },
-    close(name: N) {
-      _modals[name].close()
-    },
-    closeAll() {
-      for (const modal of Object.values<UseModalController>(_modals)) {
-        modal.close()
-      }
-    },
-    /**
-     * Get all modal components in a modal group
-     */
-    get component(): Component {
-      return {
-        render() {
-          return Object.values<UseModalController>(_modals).map((modal) => modal.component)
-        }
-      }
-    }
-  }
-}

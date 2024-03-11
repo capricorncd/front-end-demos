@@ -7,13 +7,12 @@ import TestA from '../components/SchedulerModals/TestA.vue'
 import TestB from '../components/SchedulerModals/TestB.vue'
 import TestC from '../components/SchedulerModals/TestC.vue'
 import TestD from '../components/SchedulerModals/TestD.vue'
-import { useSchedulerController, useModalGroup } from '../libs/scheduler'
+import { useModalGroup } from '../libs/scheduler'
 
 export function useScheduler() {
-  const scheduler = useSchedulerController()
-  const modalGroup = useModalGroup(scheduler)
+  const { modals, scheduler, component } = useModalGroup()
 
-  modalGroup
+  modals
     .add('TestA', TestA, { msg: 'Message Props' })
     .add('TestB', TestB)
     .add('TestC', TestC)
@@ -21,25 +20,23 @@ export function useScheduler() {
 
   scheduler
     .beforeEach(() => {
-      modalGroup.closeAll()
+      modals.closeAll()
     })
     .add('openTestA', () => {
-      modalGroup.open('TestA')
+      modals.open('TestA')
     })
     .add('openTestB', () => {
-      modalGroup.open('TestB')
+      modals.open('TestB')
     })
     .add('openTestD', () => {
-      modalGroup.open('TestD')
+      modals.open('TestD')
     })
     .add('openTestC', () => {
-      modalGroup.open('TestC')
+      modals.open('TestC')
     })
 
   return {
     scheduler,
-    get component() {
-      return modalGroup.component
-    }
+    component
   }
 }
