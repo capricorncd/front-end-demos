@@ -10,7 +10,7 @@ https://capricorncd.github.io/demos/css/solar-system
 
 ## Source
 
-https://github.com/capricorncd/front-end-demos/tree/main/css-solar-system/src
+https://github.com/capricorncd/front-end-demos/tree/main/css/solar-system
 
 ## Video Tutorial
 
