@@ -5,10 +5,10 @@ Some web front-end demos
 ## Demos
 
 <!--PLAYGROUND_LIST-->
-Name|Playground|Source|Command|Description
-:--|:--|:--|:--|:--
-css/solar-system|<a href='https://capricorncd.github.io/demos/css/solar-system' target='_blank'>Link</a>|[Source](css/solar-system)|`npm run dev -w css/solar-system`|Milky Way star animation implemented with CSS
-vue/modal-group-controller|<a href='https://capricorncd.github.io/demos/vue/modal-group-controller' target='_blank'>Link</a>|[Source](vue/modal-group-controller)|`npm run dev -w vue/modal-group-controller`|--
+Name/Source|Playground|Command|Description
+:--|:--|:--|:--
+[css/solar-system](css/solar-system)|<a href='https://capricorncd.github.io/demos/css/solar-system' target='_blank'>Link</a>|`npm run dev -w css/solar-system`|Milky Way star animation implemented with CSS
+[vue/modal-group-controller](vue/modal-group-controller)|<a href='https://capricorncd.github.io/demos/vue/modal-group-controller' target='_blank'>Link</a>|`npm run dev -w vue/modal-group-controller`|--
 <!--PLAYGROUND_LIST-->
 
 ## 常用命令

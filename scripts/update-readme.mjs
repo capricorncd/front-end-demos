@@ -40,15 +40,16 @@ function createDocInfoLines(arr) {
 
   const lines = [
     // BLANK_LINE,
-    `Name|Playground|Source|Command|Description`,
-    ':--|:--|:--|:--|:--',
+    `Name/Source|Playground|Command|Description`,
+    ':--|:--|:--|:--',
   ]
   arr.forEach(item => {
-    lines.push([item.name,
+    lines.push([
+      `[${item.name}](${item.source})`,
       `<a href='${item.url}' target='_blank'>Link</a>`,
-      `[Source](${item.source})`,
       `\`npm run dev -w ${item.source}\``,
-      item.description || '--'].join('|'))
+      item.description || '--'
+    ].join('|'))
   })
   return lines
 }
