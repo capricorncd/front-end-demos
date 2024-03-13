@@ -30,7 +30,7 @@
 
 @mixin orbit-keyframes($name) {
   // 随机生成开始旋转角度，避免开始时所有恒星都在同一条线上
-  $start: random(100);
+  $start: random(360);
   $end: $start - 360;
 
   @keyframes orbit-#{$name} {
