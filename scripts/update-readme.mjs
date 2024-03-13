@@ -25,7 +25,7 @@ function resolve(_path) {
 function getDocInfoFromPackageJson(pkgFilePath) {
   const pkg = JSON.parse(fs.readFileSync(pkgFilePath, 'utf-8').toString())
   const docInfo = pkg.docInfo
-  if (isObject(docInfo)) {
+  if (isObject(docInfo) && !docInfo.hidden) {
     if (!docInfo.name) docInfo.name = pkg.name
     if (!docInfo.source) docInfo.source = pkg.name
     if (!docInfo.description) docInfo.description = pkg.description || '--'

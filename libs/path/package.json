@@ -34,6 +34,7 @@
   "author": "Capricorncd<capricorncd@qq.com>",
   "license": "MIT",
   "docInfo": {
+    "hidden": true,
     "name": "libs/path",
     "source": "libs/path",
     "url": "https://capricorncd.github.io/demos/libs/path",
