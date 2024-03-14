@@ -1,0 +1,47 @@
+{
+  "name": "@fd-css/clip-gradient-shadow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "裁剪渐变阴影",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000 --open",
+    "build": "vite build --emptyOutDir",
+    "lint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "prettier": "prettier --write .",
+    "stylelint": "stylelint \"**/*.{vue,scss,css}\" \"!**/dist/**\" --fix",
+    "format": "npm run lint && npm run stylelint",
+    "test": "vitest"
+  },
+  "keywords": [
+    "css",
+    "clip-gradient-shadow",
+    "css/clip-gradient-shadow",
+    "front-end"
+  ],
+  "files": [],
+  "workspaces": [],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs}": "eslint --fix",
+    "*.{css,scss}": "prettier --write"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0",
+    "vite": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": false,
+    "name": "css/clip-gradient-shadow",
+    "source": "css/clip-gradient-shadow",
+    "url": "https://capricorncd.github.io/demos/css/clip-gradient-shadow",
+    "description": "裁剪渐变阴影，锥形渐变"
+  }
+}
