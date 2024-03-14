@@ -11,7 +11,9 @@
 @mixin before($size, $bg: transparent) {
   &::before {
     content: "";
+
     @include size($size);
+
     position: absolute;
     left: 50%;
     border-radius: 50%;
@@ -30,13 +32,14 @@
 
 @mixin orbit-keyframes($name) {
   // 随机生成开始旋转角度，避免开始时所有恒星都在同一条线上
-  $start: random(360);
+  $start: math.random(360);
   $end: $start - 360;
 
   @keyframes orbit-#{$name} {
     from {
       transform: translate(-50%, -50%) rotate(#{$start}deg);
     }
+
     to {
       transform: translate(-50%, -50%) rotate(#{$end}deg);
     }

@@ -1,4 +1,4 @@
-import { resolve } from '@fed-libs/path'
+import { resolve } from '@fd-libs/path'
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
