@@ -4,13 +4,12 @@
   "description": "Some web front-end demos, whose submodules are prefixed by their omitted fed-*.",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "prepare": "husky",
-    "lint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
     "prettier": "prettier --write .",
-    "stylelint": "stylelint \"**/*.{vue,scss,css}\" \"!**/dist/**\" --fix",
-    "format": "npm run lint && npm run stylelint",
+    "stylelint": "stylelint \"**/*.{vue,scss,css,less}\" --fix",
+    "format": "npm run lint && npm run prettier",
     "test": "vitest",
     "ur": "node scripts/update-readme.mjs"
   },
@@ -26,8 +25,13 @@
     "./vue/*"
   ],
   "devDependencies": {
+    "eslint": "^8.57.0",
     "husky": "^9.0.11",
-    "inquirer": "^9.2.15"
+    "inquirer": "^9.2.15",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0"
   },
   "author": "Capricorncd<capricorncd@qq.com>",
   "license": "MIT"
