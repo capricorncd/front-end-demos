@@ -40,7 +40,7 @@ function createDocInfoLines(arr) {
 
   const lines = [
     // BLANK_LINE,
-    `Name/Source|Playground|Command|Description`,
+    'Name/Source|Playground|Command|Description',
     ':--|:--|:--|:--',
   ]
   arr.forEach(item => {
