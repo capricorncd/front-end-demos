@@ -1,3 +1,8 @@
+/**
+ * Created by Capricorncd.
+ * https://github.com/capricorncd
+ * Date: 2024/01/16 15:17:15 (GMT+0900)
+ */
 module.exports = {
   root: true,
   env: {

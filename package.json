@@ -22,6 +22,10 @@
     "./react/*",
     "./vue/*"
   ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,cjs,mjs}": "eslint --fix",
+    "*.{css,scss,less}": "stylelint --fix"
+  },
   "devDependencies": {
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
