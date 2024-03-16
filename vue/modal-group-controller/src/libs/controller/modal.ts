@@ -5,7 +5,7 @@
  */
 import type { Component, VNode } from 'vue'
 import { ref, h } from 'vue'
-import type { UseSchedulerController } from './scheduler'
+import type { UseController } from './controller'
 
 /**
  * useModalController
@@ -16,7 +16,7 @@ import type { UseSchedulerController } from './scheduler'
  */
 export function useModalController<T>(
   Com: Component,
-  scheduler: UseSchedulerController,
+  controller: UseController,
   props?: T
 ) {
   const _visible = ref(false)
@@ -38,7 +38,7 @@ export function useModalController<T>(
      * Get the VNode of the current Modal
      */
     get component(): VNode {
-      return h(Com, { ...props, visible: _visible.value, scheduler })
+      return h(Com, { ...props, visible: _visible.value, controller })
     }
   }
 }

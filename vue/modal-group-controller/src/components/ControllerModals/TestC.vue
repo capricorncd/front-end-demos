@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import Modal from '../Modal.vue'
 
-import { type UseSchedulerController } from '../../libs/scheduler'
+import { type UseController } from '../../libs/controller'
+import { controllerNames } from './constants'
 
 export interface TestCProps {
   visible?: boolean
   msg?: string
-  scheduler: UseSchedulerController
+  controller: UseController
 }
 
 const props = defineProps<TestCProps>()
@@ -16,8 +17,8 @@ const props = defineProps<TestCProps>()
   <Modal title="Test Modal C" :class="$style.root" :model-value="visible">
     Some text for this modal. {{ msg }}
     <template #footer>
-      <button @click="scheduler.execute('openTestB', 'Show B')">Back</button>
-      <button @click="scheduler.end('Close C')">Close</button>
+      <button @click="controller.exec(controllerNames.OPEN_TEST_B, 'Show B')">Back</button>
+      <button @click="controller.end('Close C')">Close</button>
     </template>
   </Modal>
 </template>
