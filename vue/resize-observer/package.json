@@ -1,0 +1,42 @@
+{
+  "name": "@fd-vue/resize-observer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ResizeObserver",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 15877 --open",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "vue",
+    "resize-observer",
+    "vue/resize-observer",
+    "front-end"
+  ],
+  "files": [],
+  "dependencies": {
+    "echarts": "^5.5.0",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.5"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": false,
+    "name": "vue/resize-observer",
+    "source": "vue/resize-observer",
+    "url": "https://capricorncd.github.io/demos/vue/resize-observer",
+    "description": ""
+  }
+}
