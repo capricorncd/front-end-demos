@@ -10,6 +10,17 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <HelloWorld msg="Modal Group Control" />
 
+      <svg width="100%" height="34" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <rect class="loop" width="100%" height="100%" fill="url(#grad)"></rect>
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#41b883;stop-opacity:0" />
+            <stop offset="50%" style="stop-color:#41b883;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#41b883;stop-opacity:0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <nav>
         <RouterLink to="/">Action</RouterLink>
         <RouterLink to="/controller">Controller</RouterLink>
@@ -21,6 +32,20 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+.loop {
+  animation: loop 0.5s ease-in infinite;
+}
+@keyframes loop {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
