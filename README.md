@@ -13,24 +13,13 @@ Name/Source|Playground|Command|Description
 [vue/resize-observer](vue/resize-observer)|<a href='https://capricorncd.github.io/demos/vue/resize-observer' target='_blank'>Link</a>|`npm run dev -w vue/resize-observer`|ResizeObserver
 <!--PLAYGROUND_LIST-->
 
-## 常用命令
+## Common commands
 
 ```bash
 // fix
 npx eslint . --fix --ext .js,.mjs,.cjs,.ts,.tsx
-
-// base
-npm i -D vite vitest eslint
-
-// typescript
-npm i -D typescript
-
-// vue
-npm i vue vue-router
-
-// react
-npm i react
-
-// other lint
-npm i -D stylelint
 ```
+
+## Old repository URL
+
+https://github.com/capricorncd/demos

@@ -1,3 +1,25 @@
 {
-  "cSpell.words": ["Capricorncd", "stylelint", "pinia"]
+  "cSpell.words": ["Capricorncd", "stylelint", "pinia"],
+  "html.format.enable": false,
+  "css.format.enable": false,
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "yaml",
+  ]
 }

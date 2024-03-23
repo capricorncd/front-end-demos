@@ -20,6 +20,7 @@
     "./libs/*",
     "./nodejs/*",
     "./react/*",
+    "./ts/*",
     "./vue/*"
   ],
   "lint-staged": {
@@ -32,7 +33,9 @@
     "inquirer": "^9.2.15",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-config-standard-scss": "^13.0.0"
+    "stylelint-config-standard-scss": "^13.0.0",
+    "typescript": "^5.4.3",
+    "typescript-eslint": "^7.3.1"
   },
   "author": "Capricorncd<capricorncd@qq.com>",
   "license": "MIT"
