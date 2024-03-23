@@ -35,17 +35,21 @@ import HelloWorld from './components/HelloWorld.vue'
 .loop {
   animation: loop 0.5s ease-in infinite;
 }
+
 @keyframes loop {
   0% {
     transform: translateX(-100%);
   }
+
   50% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
+
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -81,7 +85,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -102,7 +106,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }

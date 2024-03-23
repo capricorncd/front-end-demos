@@ -4,7 +4,6 @@
  * Date: 2022/10/29 21:42:32 (GMT+0900)
  */
 // import { $$, createElement } from 'zx-sml'
-import { $ } from 'zx-sml'
 import './style.scss'
 
 function random(min, max) {

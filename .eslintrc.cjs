@@ -61,5 +61,13 @@ module.exports = {
     // method or global variable
     // readonlyMethodOrVariable: "readonly",
     // writableMethodOrVariable: "writable"
-  }
+  },
+  overrides: [
+    {
+      files: ['*.json'],
+      rules: {
+        quotes: ['error', 'double']
+      }
+    }
+  ]
 }

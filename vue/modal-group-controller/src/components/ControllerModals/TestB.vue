@@ -28,7 +28,7 @@ const props = defineProps<TestBProps>()
 .root {
   width: 100%;
   padding: 2em;
-  background-color: rgb(208, 14, 133);
+  background-color: rgb(208 14 133);
   margin: 0.5em 0;
 }
 </style>

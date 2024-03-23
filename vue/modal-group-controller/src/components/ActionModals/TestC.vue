@@ -31,7 +31,7 @@ const handleClick = (action: string, params: string) => {
 .root {
   width: 100%;
   padding: 2em;
-  background-color: rgb(230, 88, 246);
+  background-color: rgb(230 88 246);
   margin: 0.5em 0;
 }
 </style>

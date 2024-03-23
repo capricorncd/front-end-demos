@@ -19,41 +19,45 @@ export function useHome() {
     })
     .addAction('show-b', (params) => {
       open('TestB')
-      console.log(params)
+      console.log('show-b', params)
     })
     .addAction('show-d', (params) => {
-      console.log(params)
       open('TestD')
+      console.log('show-d', params)
     })
 
   modal('TestB', TestB)
     .beforeEach((params) => {
       close('TestB')
-      console.log('beforeEach', params)
+      console.log('TestB beforeEach', params)
     })
     .addAction('back', (params) => {
       open('TestA')
+      console.log('back', params)
     })
-    .addAction('show-c', (prams) => {
+    .addAction('show-c', (params) => {
       open('TestC')
+      console.log('show-c', params)
     })
 
   modal('TestC', TestC)
     .beforeEach((params) => {
       close('TestC')
-      console.log('beforeEach', params)
+      console.log('TestC beforeEach', params)
     })
     .addAction('back', (params) => {
       open('TestB')
+      console.log('TestC back', params)
     })
 
   modal('TestD', TestD)
     .beforeEach((params) => {
       close('TestD')
-      console.log('beforeEach', params)
+      console.log('TestD beforeEach', params)
     })
     .addAction('back', (params) => {
       open('TestA')
+      console.log('TestD back', params)
     })
 
   return {
