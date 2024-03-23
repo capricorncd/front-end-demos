@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
+import '@fd-libs/header'
 import App from './App.vue'
 import resizeDirect from './resize-direct'
-import './style.css'
+import './style.scss'
 
 const app = createApp(App)
 app.directive('resizeDirect', resizeDirect)

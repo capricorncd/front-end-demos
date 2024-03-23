@@ -14,7 +14,7 @@ function handlerResize({ width, height }) {
 </script>
 
 <template>
-<h1>ResizeObserver</h1>
+<demo-header title="ResizeObserver" github="https://github.com/capricorncd/front-end-demos/tree/main/vue/resize-observer"></demo-header>
 <div>监控元素尺寸变化</div>
 
 <div class="container">

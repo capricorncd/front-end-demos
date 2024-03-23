@@ -1,4 +1,5 @@
 import './style.scss'
+import '@fd-libs/header'
 
 (function() {
   const xRange = [-100, 100]

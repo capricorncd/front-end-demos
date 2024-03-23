@@ -4,6 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <demo-header github="https://github.com/capricorncd/front-end-demos/tree/main/vue/modal-group-controller" background="hsl(160deg 100% 37% / 100%)"></demo-header>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
