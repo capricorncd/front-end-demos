@@ -1,0 +1,66 @@
+/**
+ * Created by Capricorncd.
+ * https://github.com/capricorncd
+ * Date: 2024/03/23 15:02:52 (GMT+0900)
+ */
+body {
+  padding-top: 60px;
+  text-align: center;
+
+  > div {
+    margin-top: 2em;
+  }
+}
+
+button {
+  padding: 1em 3em;
+  background: green;
+  color: #fff;
+  border-radius: 4px;
+  border: 0;
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.animation {
+  margin-top: 5em;
+  position: relative;
+}
+
+.ball {
+  position: absolute;
+  left: 10%;
+  top: 0;
+  width: 6em;
+  height: 6em;
+  background: #333;
+  animation: move 10s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes move {
+  0% {
+    left: 10%;
+    transform: rotate(0);
+  }
+
+  50% {
+    left: 90%;
+    transform: rotate(720deg);
+  }
+
+  100% {
+    left: 10%;
+    transform: rotate(1440deg);
+  }
+}
