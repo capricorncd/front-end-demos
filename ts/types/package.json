@@ -1,0 +1,39 @@
+{
+  "name": "@fd-ts/types",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "src/index.d.ts",
+  "type": "module",
+  "types": "src/index.d.ts",
+  "scripts": {
+  },
+  "keywords": [
+    "ts",
+    "types",
+    "ts/types",
+    "front-end"
+  ],
+  "files": [
+    "src/index.d.ts"
+  ],
+  "devDependencies": {
+    "@type-challenges/utils": "^0.1.1",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": true,
+    "name": "ts/types",
+    "source": "ts/types",
+    "url": "https://capricorncd.github.io/demos/ts/types",
+    "description": ""
+  }
+}
