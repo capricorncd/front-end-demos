@@ -1,0 +1,46 @@
+{
+  "name": "@fd-libs/header",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 11061 --open",
+    "build": "vite build --emptyOutDir",
+    "eslint": "eslint . --fix --ext .js,.jsx,.cjs,.mjs,.ts,.tsx",
+    "stylelint": "stylelint \"**/*.{vue,scss,less,css}\" --fix",
+    "prettier": "prettier --write .",
+    "lint": "npm run eslint && npm run stylelint",
+    "format": "npm run lint && npm run prettier",
+    "test": "vitest"
+  },
+  "keywords": [
+    "js",
+    "header",
+    "js/header",
+    "front-end"
+  ],
+  "files": [],
+  "workspaces": [],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs}": "eslint --fix",
+    "*.{css,scss}": "prettier --write"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": true,
+    "name": "js/header",
+    "source": "js/header",
+    "url": "https://capricorncd.github.io/demos/js/header",
+    "description": ""
+  }
+}
