@@ -29,7 +29,7 @@ class DemoHeader extends HTMLElement {
 customElements.define('demo-header', DemoHeader)
 
 function createTemplate(attrs) {
-  const { color, background, gap, links, githubUrl, title, position, shadow } = attrs
+  const { color, background, gap, links, github, title, position, shadow } = attrs
   // css properties
   const styles = []
   if (position) styles.push(`--dh-position: ${position}`)
@@ -47,7 +47,7 @@ function createTemplate(attrs) {
         <nav>
           ${createLinks(parse(links || '[]'))}
         </nav>
-        <a class="icon-github" href="${githubUrl}" target="_blank">
+        <a class="icon-github" href="${github}" target="_blank">
           <svg width="28" height="28" viewBox="0 0 16 16" version="1.1"
           aria-hidden="true">
             <path fill-rule="evenodd" fill="currentColor"
