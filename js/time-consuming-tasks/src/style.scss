@@ -13,6 +13,8 @@ body {
 }
 
 button {
+  position: relative;
+  z-index: 1;
   padding: 1em 3em;
   background: green;
   color: #fff;
@@ -32,35 +34,104 @@ button {
   }
 }
 
-.animation {
-  margin-top: 5em;
-  position: relative;
+// 自定义CSS属性
+@property --x {
+  // 语法
+  syntax: "<length>";
+  // 初始值
+  initial-value: 0px;
+  // 不允许继承
+  inherits: false;
+}
+
+@property --y {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: false;
 }
 
 .ball {
-  position: absolute;
-  left: 10%;
-  top: 0;
-  width: 6em;
-  height: 6em;
+  // 定义了`@property --x`之后，以下设置就不需要了
+  // --x: 0px;
+  // --y: 0px;
+  margin: 50px auto 0 50%;
+  // 元素动画模糊原因：用的rem单位有小数点。改成整数的px就不模糊了?(x)
+  width: 60px;
+  height: 60px;
   background: #333;
-  animation: move 10s linear infinite;
-  border-radius: 4px;
+  animation:
+    x 2s,
+    y 1s;
+  animation-timing-function: cubic-bezier(0.5, -1000, 0.5, 1000);
+  animation-iteration-count: infinite;
+  border-radius: 30px;
+  transform: translate(var(--x), var(--y));
 }
 
-@keyframes move {
-  0% {
-    left: 10%;
-    transform: rotate(0);
+// CSS动画只支持属性动画
+@keyframes x {
+  to {
+    --x: 1px;
   }
+}
 
-  50% {
-    left: 90%;
-    transform: rotate(720deg);
+@keyframes y {
+  to {
+    --y: 0.1px;
   }
+}
 
-  100% {
-    left: 10%;
-    transform: rotate(1440deg);
+@property --r {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.ball2 {
+  margin: 10em auto 0 50%;
+  width: 60px;
+  height: 60px;
+  background: #0ce831;
+  animation:
+    x 2s,
+    r 8s;
+  animation-timing-function: cubic-bezier(0.5, -1000, 0.5, 1000);
+  animation-iteration-count: infinite;
+  border-radius: 30px;
+  transform: rotate(var(--r)) translate(var(--x));
+}
+
+@keyframes r {
+  to {
+    --r: 1deg;
   }
+}
+
+.ball3 {
+  margin: 10em auto 0 50%;
+  width: 60px;
+  height: 60px;
+  background: #e8c30c;
+  animation:
+    x 2s cubic-bezier(0.5, -1000, 0.5, 1000),
+    r2 4s linear;
+  animation-iteration-count: infinite;
+  border-radius: 30px;
+  transform: rotate(var(--r)) translate(var(--x));
+}
+
+@keyframes r2 {
+  to {
+    --r: 360deg;
+  }
+}
+
+.dot {
+  $size: 4px;
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
 }

@@ -6,6 +6,7 @@
 import '@fd-libs/header'
 import './style.scss'
 import { runTask } from './core'
+import { draw } from './draw'
 
 function $(s) {
   return document.querySelector(s)
@@ -38,6 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   button.addEventListener('click', handleClick)
+
+  // balls
+  const ball = $('.ball')
+  const ball2 = $('.ball2')
+  const ball3 = $('.ball3')
+
+  let timer = setInterval(() => {
+    const d1 = draw(ball, 200, '#999')
+    const d2 = draw(ball2, 2000, '#0ce831')
+    const d3 = draw(ball3, 401, '#e8c30c')
+    if (d1.end() && d2.end() && d3.end()) {
+      clearInterval(timer)
+      timer = null
+    }
+  }, 10)
+
+  // TransitionEvent
+  // ball.addEventListener('transitionstart', (e) => {
+  //   console.log(e)
+  // })
+
+  // ball.addEventListener('transitionrun', (e) => {
+  //   console.log(e)
+  // })
 })
 
 
