@@ -78,12 +78,14 @@ function createStyles() {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-family: system-ui;
     }
     .title {
       margin: 0 0 0 20px;
       padding: 0;
       line-height: 1;
       font-size: 1.5rem;
+      font-weight: 500;
     }
     .right-wrap {
       display: flex;
