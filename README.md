@@ -8,6 +8,7 @@ Some web front-end demos
 Name|Links|Command|Description
 :--|:--|:--|:--
 css/clip-gradient-shadow|[Source](css/clip-gradient-shadow) <a href='https://capricorncd.github.io/demos/css/clip-gradient-shadow' target='_blank'>Playground</a>|`npm run dev -w css/clip-gradient-shadow`|裁剪渐变阴影，锥形渐变
+css/nine-palace-sass|[Source](css/nine-palace-sass) <a href='https://capricorncd.github.io/demos/css/nine-palace-sass' target='_blank'>Playground</a>|`npm run dev -w css/nine-palace-sass`|九宫格鼠标动画
 css/solar-system|[Source](css/solar-system) <a href='https://capricorncd.github.io/demos/css/solar-system' target='_blank'>Playground</a>|`npm run dev -w css/solar-system`|Milky Way star animation implemented with CSS
 js/time-consuming-tasks|[Source](js/time-consuming-tasks) <a href='https://capricorncd.github.io/demos/js/time-consuming-tasks' target='_blank'>Playground</a>|`npm run dev -w js/time-consuming-tasks`|requestIdleCallback, requestAnimationFrame
 vue/modal-group-controller|[Source](vue/modal-group-controller) <a href='https://capricorncd.github.io/demos/vue/modal-group-controller' target='_blank'>Playground</a>|`npm run dev -w vue/modal-group-controller`|--

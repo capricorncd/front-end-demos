@@ -1,0 +1,39 @@
+{
+  "name": "@fd-css/nine-palace-sass",
+  "version": "1.0.0",
+  "private": true,
+  "description": "九宫格鼠标动画",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 12428 --open",
+    "build": "vite build --emptyOutDir",
+    "sass": "sass style.scss style.css"
+  },
+  "keywords": [
+    "css",
+    "nine-palace-sass",
+    "css/nine-palace-sass",
+    "front-end"
+  ],
+  "files": [],
+  "workspaces": [],
+  "devDependencies": {
+    "sass": "^1.74.1",
+    "vite": "^5.2.8"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": false,
+    "name": "css/nine-palace-sass",
+    "source": "css/nine-palace-sass",
+    "url": "https://capricorncd.github.io/demos/css/nine-palace-sass",
+    "description": ""
+  }
+}
