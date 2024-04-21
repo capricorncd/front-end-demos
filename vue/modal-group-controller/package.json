@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --emptyOutDir",
+    "push": "cd ../../../capricorncd.github.io && git add . && git commit -m \"Update\" && git push",
+    "update:demos": "npm run build && npm run push",
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
@@ -26,6 +28,7 @@
     "*.{css,scss}": "prettier --write"
   },
   "dependencies": {
+    "@prop-styles/vue": "^0.0.3",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"

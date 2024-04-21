@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import FormTest from './components/FormTest.vue'
 </script>
 
 <template>
@@ -10,6 +11,8 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="Modal Group Control" />
+
+      <FormTest />
 
       <svg width="100%" height="34" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <rect class="loop" width="100%" height="100%" fill="url(#grad)"></rect>
@@ -34,7 +37,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style scoped>
 .loop {
-  animation: loop 0.5s ease-in infinite;
+  animation: loop 2s linear infinite;
 }
 
 @keyframes loop {
