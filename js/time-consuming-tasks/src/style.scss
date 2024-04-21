@@ -38,15 +38,17 @@ button {
 @property --x {
   // 语法
   syntax: "<length>";
+
   // 初始值
-  initial-value: 0px;
+  initial-value: 0;
+
   // 不允许继承
   inherits: false;
 }
 
 @property --y {
   syntax: "<length>";
-  initial-value: 0px;
+  initial-value: 0;
   inherits: false;
 }
 
@@ -55,6 +57,7 @@ button {
   // --x: 0px;
   // --y: 0px;
   margin: 50px auto 0 50%;
+
   // 元素动画模糊原因：用的rem单位有小数点。改成整数的px就不模糊了?(x)
   width: 60px;
   height: 60px;
@@ -128,6 +131,7 @@ button {
 
 .dot {
   $size: 4px;
+
   position: absolute;
   width: $size;
   height: $size;
