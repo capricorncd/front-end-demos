@@ -9,8 +9,9 @@ class DemoHeader extends HTMLElement {
     this.root = this.attachShadow({ mode: 'open' })
   }
 
-  /** life-cycle-callbacks */
+  /** life-cycle-callbacks: Custom element added to page. */
   connectedCallback() {
+    console.log(`Custom element ${this.nodeName} added to page.`)
     const attrs = getAttributes(this, ['links', 'github', 'color', 'background', 'title', 'shadow'], {
       github: 'https://github.com/capricorncd',
       title: 'Capricorncd'
@@ -20,9 +21,20 @@ class DemoHeader extends HTMLElement {
     this.root.appendChild(createStyles(attrs))
   }
 
+  /** life-cycle-callbacks: Custom element removed from page. */
+  disconnectedCallback() {
+    console.log(`Custom element ${this.nodeName} removed from page.`)
+  }
+
+  /** life-cycle-callbacks: Custom element moved to new page. */
+  adoptedCallback() {
+    console.log(`Custom element ${this.nodeName} moved to new page.`)
+  }
+
   /** life-cycle-callbacks */
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log('attributeChangedCallback:', name, oldValue, newValue)
+    // TODO
+    console.log(`${this.nodeName} attributeChangedCallback:`, name, oldValue, newValue)
   }
 }
 
