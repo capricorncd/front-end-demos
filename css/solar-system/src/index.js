@@ -3,7 +3,7 @@
  * https://github.com/capricorncd
  * Date: 2022/10/29 21:42:32 (GMT+0900)
  */
-// import { $$, createElement } from 'zx-sml'
+// import { $$, createElement } from '@zx-libs/utils'
 import './style.scss'
 
 function random(min, max) {

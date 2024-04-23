@@ -3,6 +3,8 @@
  * https://github.com/capricorncd
  * Date: 2022/10/29 21:42:32 (GMT+0900)
  */
+@use "sass:math";
+
 @mixin size($value) {
   width: #{$value}px;
   height: #{$value}px;

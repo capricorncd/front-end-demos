@@ -22,7 +22,7 @@
     "*.{css,scss}": "prettier --write"
   },
   "dependencies": {
-    "zx-sml": "^0.7.6"
+    "@zx-libs/utils": "^0.0.1"
   },
   "devDependencies": {
     "sass": "^1.71.1",
