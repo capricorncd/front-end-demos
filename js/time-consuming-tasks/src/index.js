@@ -7,10 +7,7 @@ import '@fd-libs/header'
 import './style.scss'
 import { runTask } from './core'
 import { draw } from './draw'
-
-function $(s) {
-  return document.querySelector(s)
-}
+import { $ } from '@zx-libs/utils'
 
 function wait(t = 50) {
   return new Promise((resolve) => {

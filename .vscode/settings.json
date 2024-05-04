@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["Capricorncd", "stylelint", "pinia"],
+  "cSpell.words": ["Capricorncd", "stylelint", "pinia", "docgen"],
   "html.format.enable": false,
   "css.format.enable": false,
   "typescript.format.enable": false,

@@ -1,6 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { useECharts } from './echarts'
+import { usePropStyles } from '@prop-styles/vue'
+
+const props = defineProps();
+
+const { style } = usePropStyles(props);
 
 const chartRef = ref(null)
 const eCharts = useECharts(chartRef)
@@ -17,7 +22,7 @@ function handlerResize({ width, height }) {
 <demo-header title="ResizeObserver" github="https://github.com/capricorncd/front-end-demos/tree/main/vue/resize-observer"></demo-header>
 <div>监控元素尺寸变化</div>
 
-<div class="container">
+<div class="container" :style="style">
   <div v-resize-direct="handlerResize" ref="chartRef"></div>
 </div>
 </template>
