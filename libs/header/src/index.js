@@ -13,7 +13,7 @@ class DemoHeader extends HTMLElement {
   connectedCallback() {
     console.log(`Custom element ${this.nodeName} added to page.`)
     const attrs = getAttributes(this, ['links', 'github', 'color', 'background', 'title', 'shadow'], {
-      github: 'https://github.com/capricorncd',
+      github: 'https://github.com/capricorncd/front-end-demos',
       title: 'Capricorncd'
     })
     // use HTMLElements
