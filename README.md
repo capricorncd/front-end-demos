@@ -5,7 +5,7 @@ Some web front-end demos
 ## Demos
 
 <!--PLAYGROUND_LIST-->
-Name|Links|Command|Description
+Name/Source|Links|Command|Description
 :--|:--|:--|:--
 [css/clip-gradient-shadow](css/clip-gradient-shadow)|<a href='https://capricorncd.github.io/demos/css/clip-gradient-shadow' target='_blank'>Playground</a>|`npm run dev -w css/clip-gradient-shadow`|裁剪渐变阴影，锥形渐变
 [css/nine-palace-sass](css/nine-palace-sass)|<a href='https://capricorncd.github.io/demos/css/nine-palace-sass' target='_blank'>Playground</a>|`npm run dev -w css/nine-palace-sass`|九宫格鼠标动画
