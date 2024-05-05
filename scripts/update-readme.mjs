@@ -45,8 +45,8 @@ function createDocInfoLines(arr) {
   ]
   arr.forEach(item => {
     lines.push([
-      `${item.name}`,
-      `[Source](${item.source}) <a href='${item.url}' target='_blank'>Playground</a>`,
+      `[${item.name}](${item.source})`,
+      `<a href='${item.url}' target='_blank'>Playground</a>`,
       `\`npm run dev -w ${item.source}\``,
       item.description || '--'
     ].join('|'))
