@@ -15,3 +15,10 @@ type first2_1 = First2<arr1> // 应推导出 'a'
 type first2_2 = First2<arr2> // 应推导出 3
 type first2_3 = First2<[undefined]> // 应推导出 undefined
 type first2_4 = First2<never> // 应推导出 never
+
+type F3<T extends any[]> = T extends [] ? never : T[0]
+
+type first3_1 = F3<arr1> // 应推导出 'a'
+type first3_2 = F3<arr2> // 应推导出 3
+type first3_3 = F3<[undefined]> // 应推导出 undefined
+type first3_4 = F3<never> // 应推导出 never
