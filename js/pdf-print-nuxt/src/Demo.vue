@@ -38,6 +38,7 @@ const handleClick = () => {
   background-color: coral;
   color: #fff;
   font-size: 1em;
+  transition: opacity 0.3s ease;
 
   &:disabled {
     opacity: 0.3;

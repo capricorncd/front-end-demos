@@ -3,7 +3,8 @@ const emit = defineEmits<{
   closed: []
 }>()
 
-const iframe = ref<HTMLIFrameElement>()
+const channel = shallowRef<BroadcastChannel>()
+const iframe = shallowRef<HTMLIFrameElement>()
 const url = ref('/web?file=')
 const visible = ref(false)
 
@@ -17,23 +18,17 @@ const open = async (pdfUrl: string) => {
     throw new Error(await res.text())
   }
   visible.value = true
-
-  // setTimeout(() => {
-  //   const doc = iframe.value?.contentDocument as Document
-  //   const printButton = doc.querySelector('#printButton') as HTMLElement
-  //   if (printButton) printButton.click()
-  // }, 500)
 }
 
 // 暴露 open 方法给父组件
 defineExpose({ open })
 
 onMounted(() => {
-  const channel = new BroadcastChannel('pdf-viewer')
+  channel.value = new BroadcastChannel('pdf-viewer')
 
-  channel.addEventListener('message', (e) => {
+  channel.value.addEventListener('message', (e) => {
     console.log('message', e.data)
-    const { type} = e.data
+    const { type } = e.data
     if (type === 'afterprint') {
       visible.value = false
       emit('closed')
@@ -46,13 +41,13 @@ onMounted(() => {
   })
 })
 
-const webviewerloaded = () => {
-  console.log('webviewerloaded')
-}
+onUnmounted(() => {
+  channel.value?.close()
+})
 </script>
 
 <template>
-  <iframe ref="iframe" v-show="visible" :src="url" :class="$style.root" @webviewerloaded="webviewerloaded" />
+  <iframe ref="iframe" v-show="visible" :src="url" :class="$style.root" />
 </template>
 
 <style lang="scss" module>
