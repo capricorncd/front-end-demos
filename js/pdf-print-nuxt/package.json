@@ -1,0 +1,42 @@
+{
+  "name": "@fd-js/pdf-print-nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PDF打印",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest"
+  },
+  "keywords": [
+    "js",
+    "pdf-print-nuxt",
+    "js/pdf-print-nuxt",
+    "front-end"
+  ],
+  "dependencies": {
+    "nuxt": "^3.13.2",
+    "pdfjs-dist": "^4.7.76",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": false,
+    "name": "js/pdf-print-nuxt",
+    "source": "js/pdf-print-nuxt",
+    "url": "https://capricorncd.github.io/demos/js/pdf-print-nuxt",
+    "description": ""
+  }
+}

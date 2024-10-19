@@ -3,3 +3,6 @@ dist
 **/**.*.js
 *.md
 *.mdx
+
+**/public/*.*
+**/public/**/*.*

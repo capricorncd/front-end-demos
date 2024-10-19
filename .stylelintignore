@@ -1,2 +1,7 @@
 **/*.min.css
 dist/
+
+**/public/*.*
+**/public/**/*.*
+
+
