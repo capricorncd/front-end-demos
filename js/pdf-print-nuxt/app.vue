@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import '@fd-libs/header'
 import Demo from './src/Demo.vue'
 </script>
 
