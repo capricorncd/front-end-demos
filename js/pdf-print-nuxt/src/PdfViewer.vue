@@ -1,39 +1,66 @@
 <script setup lang="ts">
+export interface ErrorDetail {
+  file: string;
+  id: string;
+  message: string;
+}
+
+export interface PdfViewerMethods {
+  open: (pdfUrl: string) => Promise<void>;
+  close: () => Promise<void>;
+}
+
 const emit = defineEmits<{
-  closed: []
+  closed: [],
+  error: [err: ErrorDetail]
 }>()
 
 const channel = shallowRef<BroadcastChannel>()
 const iframe = shallowRef<HTMLIFrameElement>()
-const url = ref('/web?file=')
+const url = ref('/web?file=&id=')
+const id = ref('')
 const visible = ref(false)
 
-const open = async (pdfUrl: string) => {
-  const res = await fetch(pdfUrl)
-  if (res.ok) {
-    const buffer = await res.arrayBuffer()
-    const _url = URL.createObjectURL(new Blob([buffer], { type: 'application/pdf'}))
-    url.value = `/web?file=${_url}`
-  } else {
-    throw new Error(await res.text())
+const open: PdfViewerMethods['open'] = async (pdfUrl: string) => {
+  try {
+    const res = await fetch(pdfUrl)
+    if (res.ok) {
+      const buffer = await res.arrayBuffer()
+      const _url = URL.createObjectURL(new Blob([buffer], { type: 'application/pdf'}))
+      id.value = Date.now().toString() + '_' + Math.random().toString(36).substring(2, 15)
+      url.value = `/web?file=${_url}&id=${id.value}`
+      visible.value = true
+    } else {
+      const message = await res.text()
+      throw new Error(message)
+    }
+  } catch (err) {
+    emit('error', {
+      file: pdfUrl,
+      id: id.value,
+      message: String(err),
+    })
   }
-  visible.value = true
+}
+
+const close: PdfViewerMethods['close'] = async () => {
+  visible.value = false
+  emit('closed')
 }
 
 // 暴露 open 方法给父组件
-defineExpose({ open })
+defineExpose({ open, close })
 
 onMounted(() => {
   channel.value = new BroadcastChannel('pdf-viewer')
 
   channel.value.addEventListener('message', (e) => {
     console.log('message', e.data)
-    const { type } = e.data
-    if (type === 'afterprint') {
-      visible.value = false
-      emit('closed')
+    const { type, id: _id } = e.data
+    if (type === 'afterprint' && _id === id.value) {
+      close()
     }
-    if (type === 'pages-loaded' && visible.value) {
+    if (type === 'pages-loaded' && visible.value && _id === id.value) {
       const doc = iframe.value?.contentDocument as Document
       const printButton = doc.querySelector('#printButton') as HTMLElement
       if (printButton) printButton.click()

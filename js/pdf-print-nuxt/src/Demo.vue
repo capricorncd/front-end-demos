@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import PdfViewer from './PdfViewer.vue';
+import PdfViewer, { type ErrorDetail, type PdfViewerMethods } from './PdfViewer.vue';
 
-const viewer = ref()
+const viewer = ref<PdfViewerMethods>()
 const pending = ref(false)
 
-const emit = defineEmits<{
-  change: []
-}>()
-
-const handleClick = () => {
+const handleClick = async () => {
   pending.value = true
   // const pdfUrl = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/examples/learning/helloworld.pdf'
   const pdfUrl = 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf'
   // const pdfUrl = '/test.pdf'
-  viewer.value.open(pdfUrl)
+  await viewer.value?.open(pdfUrl)
+}
+
+const handleError = (err: ErrorDetail) => {
+  const { message } = err
+  alert(message)
+  pending.value = false
 }
 </script>
 
@@ -21,7 +23,7 @@ const handleClick = () => {
   <div :class="$style.root">
     <h1>pdf-print-nuxt</h1>
     <button :class="$style.button" :disabled="pending" @click="handleClick">Print PDF</button>
-    <PdfViewer ref="viewer" @closed="pending = false" />
+    <PdfViewer ref="viewer" @closed="pending = false" @error="handleError" />
   </div>
 </template>
 
