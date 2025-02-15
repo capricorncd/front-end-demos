@@ -1,0 +1,47 @@
+{
+  "name": "@fd-nodejs/receipt-reader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "读取指定文件夹的小票发票文件，输出数据表格",
+  "main": "src/index.mjs",
+  "type": "module",
+  "scripts": {
+    "read": "node --experimental-strip-types src/index.ts",
+    "test": "vitest"
+  },
+  "keywords": [
+    "nodejs",
+    "receipt-reader",
+    "nodejs/receipt-reader",
+    "front-end"
+  ],
+  "files": [],
+  "workspaces": [],
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs}": "eslint --fix",
+    "*.{css,scss}": "prettier --write"
+  },
+  "dependencies": {
+    "@zx-libs/docgen": "^0.0.5",
+    "@zx-libs/utils": "^0.0.7",
+    "date-fns": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "homepage": "https://github.com/capricorncd/front-end-demos#readme",
+  "author": "Capricorncd<capricorncd@qq.com>",
+  "license": "MIT",
+  "docInfo": {
+    "hidden": false,
+    "name": "nodejs/receipt-reader",
+    "source": "nodejs/receipt-reader",
+    "url": "https://capricorncd.github.io/demos/nodejs/receipt-reader",
+    "description": ""
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
