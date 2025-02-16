@@ -72,7 +72,13 @@ function main() {
   const _list = getFileNameInfoList(filePath)
   // console.log(list);
 
-  const list = _list.filter((item) => !['保险', '税', '医药'].includes(item.type))
+  const list = _list.filter((item) => ![
+    // '医療費',
+    // '税',
+    // '保险',
+    '接待交際費',
+    // '地代家賃'
+  ].includes(item.type))
 
   const classifiedData = classifyData(list)
   const sumData = sumPrice(classifiedData)
@@ -94,10 +100,9 @@ function main() {
   // console.log(toCsv(denkiList));
   outputCsv(list)
 
-  // 保险
-  outputCsv(_list.filter(v => v.type === '保险'), '保険.csv')
-  outputCsv(_list.filter(v => v.type === '税'), '税.csv')
-  outputCsv(_list.filter(v => v.type === '医药'), '医药.csv')
+  outputCsv(_list.filter(v => v.type === '保险'), { filename: '保険.csv' })
+  outputCsv(_list.filter(v => v.type === '税'), { filename: '税.csv' })
+  outputCsv(_list.filter(v => v.type === '医療費'), { filename: '医療費.csv' })
 }
 
 main()
